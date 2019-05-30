@@ -1,17 +1,34 @@
 # Prettify JSON
 
-[TODO. There will be project description]
+This script takes JSON and displays its contents in a readable format.
 
 # Quickstart
-
-[TODO]
 
 Example of script launch on Linux, Python 3.5:
 
 ```bash
 
 $ python pprint_json.py <path to file>
-# TODO add output example
+{
+    "geometry": {
+        "coordinates": [
+            37.39703804817934,
+            55.740999719549094
+        ],
+        "type": "Point"
+    },
+    "properties": {
+        "Attributes": {
+            "Address": "улица Академика Павлова, дом 10",
+            "AdmArea": "Западный административный округ",
+            "ClarificationOfWorkingHours": null,
+            "District": "район Кунцево",
+            "IsNetObject": "да",
+            "Name": "Ароматный Мир",
+            "OperatingCompany": "Ароматный Мир",
+            "PublicPhone": [
+                {
+                    "PublicPho...
 
 ```
 
