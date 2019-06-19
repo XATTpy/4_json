@@ -5,7 +5,7 @@ from sys import argv
 # Functions
 def load_data(filepath):
     with open(filepath, "r") as json_file:
-        return (json.loads(json_file.read()))["features"]
+        return (json.loads(json_file.read()))
 
 
 def pretty_print_json(data):
