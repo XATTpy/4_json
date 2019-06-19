@@ -8,14 +8,14 @@ def load_data(filepath):
         return json.loads(json_file.read())
 
 
-def pretty_print_json(info):
-    return json.dumps(info, sort_keys=True, indent=4, ensure_ascii=False)
+def pretty_print_json(ugly_json):
+    return json.dumps(ugly_json, sort_keys=True, indent=4, ensure_ascii=False)
 
 
 # Exeptions and variable initialization
 try:
     filepath = argv[1]
-    info = load_data(filepath)
+    ugly_json = load_data(filepath)
 except (IndexError, IsADirectoryError, FileNotFoundError):
     sys.exit("Введите путь к файлу в качестве аргумента при запуске. Прим.: python3 bars.py /path_to_file/file_name.json")
 except ValueError:
@@ -23,4 +23,4 @@ except ValueError:
 
 
 if __name__ == "__main__":
-    print(pretty_print_json(info))
+    print(pretty_print_json(ugly_json))
