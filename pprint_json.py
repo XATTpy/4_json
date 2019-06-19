@@ -2,24 +2,25 @@ import json
 import sys
 from sys import argv
 
-
+# Functions
 def load_data(filepath):
     with open(filepath, "r") as json_file:
         return (json.loads(json_file.read()))["features"]
 
 
-def pretty_print_json(shops):
-    return json.dumps(shops, sort_keys=True, indent=4, ensure_ascii=False)
+def pretty_print_json(data):
+    return json.dumps(data, sort_keys=True, indent=4, ensure_ascii=False)
 
 
-file_path = argv[1]
+# Exeptions and variable initialization
 try:
-    shops = load_data(file_path)
-except FileNotFoundError:
-    print("Файл не найден.")
-    sys.exit()
+    filepath = argv[1]
+    data = load_data(filepath)
+except (IndexError, IsADirectoryError, FileNotFoundError):
+    sys.exit("Введите путь к файлу в качестве аргумента при запуске. Прим.: python3 bars.py /path_to_file/file_name.json")
 except ValueError:
-    print("Файл имеет неверный формат.")
-    sys.exit()
+    sys.exit("Файл имеет неверный формат.")
 
-print(pretty_print_json(shops))
+
+if __name__ == "__main__":
+    print(pretty_print_json(data))
