@@ -11,7 +11,7 @@ def pretty_print_json(decoded_json):
     return json.dumps(decoded_json, sort_keys=True, indent=4, ensure_ascii=False)
 
 
-def main():
+def show_json():
     try:
         filepath = argv[1]
         decoded_json = load_data(filepath)
@@ -26,4 +26,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    show_json()
