@@ -1,5 +1,4 @@
 import json
-import sys
 from sys import argv
 
 
@@ -18,11 +17,11 @@ def main():
         decoded_json = load_data(filepath)
         print(pretty_print_json(decoded_json))
     except (IndexError, IsADirectoryError):
-        sys.exit("Введите путь к файлу в качестве аргумента при запуске.")
+        quit("Введите путь к файлу в качестве аргумента при запуске.")
     except FileNotFoundError:
-        sys.exit("Такого файла не существует")
+        quit("Такого файла не существует")
     except ValueError:
-        sys.exit("Файл имеет неверный формат.")
+        quit("Файл имеет неверный формат.")
 
 
 
